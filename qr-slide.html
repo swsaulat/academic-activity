@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>QR for slides · Weekly Academic Activity</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800;900&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; background: #fff; }
+  .s { width: 800px; height: 800px; box-sizing: border-box; padding: 40px 60px; font-family: 'Inter', Arial, sans-serif; text-align: center; color: #0F2A37; display: flex; flex-direction: column; align-items: center; }
+  .t { font-size: 44px; font-weight: 900; letter-spacing: -.02em; color: #0E5F68; }
+  .w { font-size: 26px; font-weight: 600; color: #3B5563; margin-top: 6px; }
+  #qr { width: 520px; margin-top: 26px; border: 6px solid #1F9AA3; border-radius: 30px; padding: 20px; }
+  #qr svg { width: 100%; height: auto; display: block; }
+  .u { font-size: 30px; font-weight: 800; color: #0E5F68; margin-top: 22px; }
+</style>
+</head>
+<body>
+<div class="s">
+  <div class="t">Scan to register attendance</div>
+  <div class="w">Weekly Academic Activity · Mondays 12:55 – 2:00 PM</div>
+  <div id="qr"></div>
+  <div class="u" id="u">academic.patientflowms.com</div>
+</div>
+<script src="config.js"></script>
+<script src="core.js"></script>
+<script src="qrcode.js"></script>
+<script src="qr.js"></script>
+<script>
+  var url = (window.MR_CONFIG && window.MR_CONFIG.ATTENDEE_URL) || 'https://academic.patientflowms.com/';
+  document.getElementById('qr').innerHTML = MRQR.svg(url);
+</script>
+</body>
+</html>
