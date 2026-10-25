@@ -39,98 +39,88 @@
   .bar button { padding: 8px 14px; border-radius: 8px; border: 0; background: var(--gold); color: #fff; font: inherit; font-weight: 700; cursor: pointer; }
   @page { size: A4 portrait; margin: 0; }
   @media print { html, body { background: #fff; } .bar { display: none; } .page { margin: 0; box-shadow: none; page-break-after: always; min-height: 296mm; } .page:last-child { page-break-after: auto; } }
+  .who { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; margin-top: 5mm; }
+  .card { border: .3mm solid var(--line); border-radius: 4mm; padding: 4mm; background: #fff; }
+  .card .role { display: inline-block; font-size: 2.9mm; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #fff; background: var(--teal-d); border-radius: 2mm; padding: 1mm 2.4mm; }
+  .card.g .role { background: var(--gold); }
+  .card h3 { font-size: 4.6mm; margin: 2.5mm 0 1.5mm; letter-spacing: -.01em; }
+  .card ol, .card ul { padding-left: 4.5mm; }
+  .big { font-size: 3.6mm; font-weight: 800; color: var(--teal-d); background: var(--soft); border: .3mm dashed var(--teal); border-radius: 2.5mm; padding: 2mm 3mm; margin: 2mm 0; text-align: center; word-break: break-all; }
+  .links td:first-child { width: 33%; font-weight: 700; color: var(--ink); }
+  .when { display: flex; gap: 3mm; margin-top: 4mm; }
+  .when div { flex: 1; background: var(--teal-d); color: #fff; border-radius: 3mm; padding: 3mm; text-align: center; font-size: 3.4mm; }
+  .when b { display: block; color: #fff; font-size: 5mm; }
 </style>
 </head>
 <body>
-<div class="bar"><b>Guide</b><span style="opacity:.75">Weekly Academic Activity Attendance · for recipients and managers</span><span style="flex:1"></span><button onclick="window.print()">Print / Save as PDF</button></div>
+<div class="bar"><b>Guide</b><span style="opacity:.75">Weekly Academic Activity Attendance · one page for everyone</span><span style="flex:1"></span><button onclick="window.print()">Print / Save as PDF</button></div>
 
 <section class="page">
   <div class="head">
     <img src="logo.svg" alt="Weekly Academic Activity" style="border-radius:5mm">
     <div>
       <div class="t1">Adult Emergency Unit – Emergency Department</div>
-      <div class="t2">Weekly Academic Activity Attendance<br>Guide for Recipients &amp; Managers</div>
-      <div class="t3">How to view attendance, receive reports, correct entries and reprint the QR poster</div>
+      <div class="t2">Weekly Academic Activity<br>Attendance: how it works</div>
+      <div class="t3">One link in the Zoom chat. Attendance is recorded and emailed automatically.</div>
     </div>
   </div>
 
-  <h2><span class="n">1</span>What you receive automatically</h2>
-  <ul>
-    <li><b>Daily report (PDF)</b> by email at about <b>14:00</b> every <b>Monday</b>: names, IDs, training levels, registration times and total attendance.</li>
-    <li><b>Monthly summary (PDF)</b> on the <b>1st of each month</b>, and a <b>yearly summary</b> on <b>1 January</b>: sessions held, attendance per session and each trainee's attendance rate.</li>
-    <li>All PDFs are also kept in the shared Google Drive folder <b>“Weekly Academic Activity Attendance – PDF Archive”</b> (Drive → <b>Shared with me</b>).</li>
-    <li>A read-only Google Sheet <b>“… Attendance Register (read-only)”</b> with every registration, refreshed every 10 minutes (Drive → Shared with me). Its first tab, <b>Start Here</b>, has all the links in this guide.</li>
-  </ul>
-
-  <h2><span class="n">2</span>Open the dashboard</h2>
-  <div class="box">
-    <p>Dashboard: <span class="link" data-u="admin.html">academic.patientflowms.com/admin.html</span></p>
+  <div class="when">
+    <div><b>Every Monday</b>on Zoom</div>
+    <div><b>12:30 – 1:30 PM</b>registration open</div>
+    <div><b>About 2:00 PM</b>report emailed</div>
   </div>
-  <ol>
-    <li>Open the link on your phone or computer and tap <b>Continue with Google</b>.</li>
-    <li>Choose the Google account that is registered as a recipient (the one that receives the reports).</li>
-    <li>You will see <b>today's attendance live</b>, the 30-session trend, attendance by training level, rejected attempts and the change history. Use the date arrows to look at any previous day.</li>
-    <li><b>Trainee attendance</b> tab: each trainee's attendance rate for the last 30 days to 12 months. <b>Export CSV</b> downloads the data.</li>
-  </ol>
 
-  <h2><span class="n">3</span>Who can do what</h2>
-  <table>
-    <tr><th>Task</th><th style="width:22%">View access</th><th style="width:22%">Manage access</th></tr>
-    <tr><td>See attendance, trends, history; export CSV</td><td class="y">✓</td><td class="y">✓</td></tr>
-    <tr><td>Receive all PDF reports; open the read-only register and PDF archive</td><td class="y">✓</td><td class="y">✓</td></tr>
-    <tr><td>Download and reprint the QR poster</td><td class="y">✓</td><td class="y">✓</td></tr>
-    <tr><td>Add a missed attendance, correct or remove an entry</td><td class="x">–</td><td class="y">✓</td></tr>
-    <tr><td>Email the report to all recipients</td><td class="x">–</td><td class="y">✓</td></tr>
-    <tr><td>Settings, recipients, session times</td><td colspan="2" style="text-align:center">System owner only (Dr. Swaid Saulat)</td></tr>
+  <div class="who">
+    <div class="card">
+      <span class="role">Moderator</span>
+      <h3>One step</h3>
+      <p>At 12:30, paste this link in the <b>Zoom chat</b> and say <i>“Please register your attendance now.”</i></p>
+      <div class="big"><span data-u="">academic.patientflowms.com</span></div>
+      <p>Optional: post it again at about 1:15 for late joiners. Nothing else to do.</p>
+    </div>
+    <div class="card">
+      <span class="role">Attendees</span>
+      <h3>15 seconds</h3>
+      <ol>
+        <li>Tap the link in the Zoom chat (or WhatsApp group).</li>
+        <li><b>Sign in with Google.</b></li>
+        <li>Name, Staff ID, level (first time only).</li>
+        <li>Tap <b>Register attendance</b>.</li>
+      </ol>
+      <p style="margin-top:1.5mm">Works from home or hospital. Once per person, Monday 12:30–1:30 only.</p>
+    </div>
+    <div class="card g">
+      <span class="role">Heads &amp; Secretary</span>
+      <h3>Nothing to do</h3>
+      <p>The attendance <b>PDF report arrives by email</b> at about 2:00 PM every Monday, automatically, to everyone on the list.</p>
+      <p style="margin-top:1.5mm">A monthly and a yearly summary are emailed automatically too.</p>
+    </div>
+  </div>
+
+  <h2><span class="n">1</span>Links</h2>
+  <table class="links">
+    <tr><td>Attendance link (Zoom chat / group)</td><td><span class="link" data-u="">academic.patientflowms.com</span></td></tr>
+    <tr><td>Dashboard (heads)</td><td><span class="link" data-u="admin.html">academic.patientflowms.com/admin.html</span><br>Sign in with your Gmail: see who attended, add or correct entries, re-send the report.</td></tr>
+    <tr><td>E-poster for the group</td><td><span class="link" data-u="E-Poster.png">academic.patientflowms.com/E-Poster.png</span></td></tr>
+    <tr><td>Attendance register</td><td>Google Sheet shared with you by email (Google Drive → <b>Shared with me</b>).</td></tr>
   </table>
 
-  <div class="foot"><span>Weekly Academic Activity Attendance System · Adult Emergency Unit – Emergency Department</span><span>Page 1 of 2</span></div>
-</section>
-
-<section class="page">
-  <div class="head" style="padding-bottom:3mm">
-    <img src="logo.svg" alt="" style="height:14mm;border-radius:3.5mm">
-    <div><div class="t1">Weekly Academic Activity Attendance</div><div class="t2" style="font-size:6mm">For managers · Running the Zoom check-in · Help</div></div>
-  </div>
-
-  <h2><span class="n">4</span>Correcting attendance (Manage access)</h2>
+  <h2><span class="n">2</span>Common questions</h2>
   <ul>
-    <li><b>Someone attended but could not register</b> (connection or phone problem): Dashboard → <b>+ Manual entry</b> → date, time, name, ID, level, note → <b>Add entry</b>. It is marked <i>Manual</i> in the register and report.</li>
-    <li><b>Wrong name, ID, level or time:</b> in the register, tap <b>✎</b> on that row, fix it, write a short reason, <b>Save correction</b>.</li>
-    <li><b>Entry that should not be there</b> (registered by mistake): tap <b>🗑</b>, write the reason, <b>Remove entry</b>.</li>
-    <li><b>Resend a report</b> after a correction: <b>Email report ▾ → Send to all recipients</b> (or <i>Send a copy to me</i>).</li>
-  </ul>
-  <div class="tip"><p>Every correction or removal is recorded with <b>who</b> made it, <b>when</b>, <b>before → after</b> and the <b>reason</b>. You can see it in the dashboard under <b>Change history</b>. Removed entries are kept in the audit record and can be restored by the system owner.</p></div>
-
-  <h2><span class="n">5</span>Running the check-in on Zoom</h2>
-  <p>During the session the moderator opens the <b>Moderator screen</b> and <b>shares it on Zoom</b>. It shows a live QR and a <b>6-digit code that changes every minute</b>. Post the attendance link in the Zoom chat; attendees open it and type the code they see on the shared screen. A forwarded link alone does not work.</p>
-  <div class="grid2">
-    <div class="box"><p><b>Link for the Zoom chat</b><br><span class="link" data-u="">academic.patientflowms.com</span></p></div>
-    <div class="box"><p><b>Moderator screen link</b><br>Read-only register → <b>Start Here</b> tab, or Dashboard → <b>System &amp; links</b>. Keep it out of the chat.</p></div>
-  </div>
-  <p style="margin-top:2mm">Tip: share the Moderator screen for the first 10 minutes and again near the end, so late joiners can also register.</p>
-
-  <h2><span class="n">6</span>How attendees register (for reference)</h2>
-  <ol>
-    <li>Open the link from the Zoom chat (or scan the QR on the shared screen) between <b>12:30 and 13:30</b> on Monday (Riyadh time).</li>
-    <li>Sign in with any Google account, enter full name, Staff ID and training level.</li>
-    <li>Type the <b>6-digit code</b> shown on the shared screen. No location is needed, so it works from home. One registration per person per session; late attempts or wrong codes are refused and listed under <i>Rejected attempts</i>.</li>
-  </ol>
-
-  <h2><span class="n">7</span>Help</h2>
-  <ul>
-    <li><b>“No dashboard access”:</b> you are signed in with a different Google account. Tap <b>Sign out</b> and choose the account that receives the reports.</li>
-    <li><b>A trainee says “ID linked to another account”:</b> they used a different Google account before. Add their attendance manually and tell the system owner.</li>
-    <li><b>Changes to times, recipients or settings:</b> contact the system owner, <b>Dr. Swaid Saulat</b> (swsaulat@gmail.com).</li>
+    <li><b>Someone attended but could not register?</b> Dashboard → <b>+ Manual entry</b>. It is marked “Manual” in the report.</li>
+    <li><b>“Not open yet” or “Registration closed”?</b> Registration only works on Monday from 12:30 to 1:30 PM.</li>
+    <li><b>Wrong name or ID?</b> Dashboard → tap <b>✎</b> on that row, correct it, write a reason. Every change is logged.</li>
+    <li><b>Add or remove an email recipient, or change the time?</b> Contact the system owner, <b>Dr. Swaid Saulat</b> (swsaulat@gmail.com).</li>
   </ul>
 
-  <div class="foot"><span>Patient Flow Management System, powered by Ruqelo</span><span>Page 2 of 2</span></div>
+  <div class="foot"><span>Patient Flow Management System, powered by Ruqelo</span><span>Weekly Academic Activity Attendance</span></div>
 </section>
 <script src="config.js"></script>
 <script>
   // Show this site's own address so the guide stays correct if the site moves to a new domain.
-  (function () { var cfg = (window.MR_CONFIG && window.MR_CONFIG.ATTENDEE_URL) || ''; var base = (cfg || new URL('./', location.href).href).replace(/^https?:\/\//, ''); if (!cfg && /^(localhost|127\.)/.test(base)) return;
-    document.querySelectorAll('[data-u]').forEach(function (el) { el.textContent = base + el.getAttribute('data-u'); }); })();
+  (function () { var cfg = (window.MR_CONFIG && window.MR_CONFIG.ATTENDEE_URL) || ''; var base = (cfg || new URL('./', location.href).href).replace(/^https?:\/\//, '').replace(/\/$/, ''); if (!cfg && /^(localhost|127\.)/.test(base)) return;
+    document.querySelectorAll('[data-u]').forEach(function (el) { var u = el.getAttribute('data-u'); el.textContent = base + (u ? '/' + u : ''); }); })();
 </script>
 </body>
 </html>

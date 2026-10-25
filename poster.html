@@ -115,7 +115,7 @@
         <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
           <div><b contenteditable data-k="i1t" id="i1t">06:00 – 06:45</b><span contenteditable data-k="i1d">Riyadh time only</span></div></div>
         <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
-          <div><b contenteditable data-k="i2t" id="i2t">Live on Zoom</b><span contenteditable data-k="i2d" id="i2d">Type the code on the screen</span></div></div>
+          <div><b contenteditable data-k="i2t" id="i2t">Join from anywhere</b><span contenteditable data-k="i2d" id="i2d">Zoom · home or hospital</span></div></div>
         <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           <div><b contenteditable data-k="i3t">Once per session</b><span contenteditable data-k="i3d">One registration per person</span></div></div>
       </div>
@@ -169,7 +169,7 @@
     const s = c.nextSession || c.session;
     set('i1t', MR.esc(s.start + ' – ' + s.end));
     set('i1d', c.timezone === 'Asia/Riyadh' ? 'Riyadh time only' : MR.esc(c.timezone));
-    set('i2d', 'Type the code on the screen');
+    set('i2d', 'Zoom · home or hospital');
     set('eyebrow', MR.esc(c.department));
     set('title', MR.esc(c.program));
     set('inst', MR.esc(c.department) + '<br>' + MR.esc(c.program) + ' Attendance');
