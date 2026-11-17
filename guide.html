@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="i18n.js"></script>
 <style>
   :root { --teal: #1F9AA3; --teal-d: #0E5F68; --gold: #BF9D68; --ink: #0F2A37; --ink2: #3B5563; --mute: #6B808C; --line: #E1E9ED; --soft: #F3F8F9; }
   * { box-sizing: border-box; }
@@ -50,12 +51,17 @@
   .when { display: flex; gap: 3mm; margin-top: 4mm; }
   .when div { flex: 1; background: var(--teal-d); color: #fff; border-radius: 3mm; padding: 3mm; text-align: center; font-size: 3.4mm; }
   .when b { display: block; color: #fff; font-size: 5mm; }
+  /* Arabic (right-to-left) */
+  [dir="rtl"] ul, [dir="rtl"] ol, [dir="rtl"] .card ol, [dir="rtl"] .card ul { padding-left: 0; padding-right: 5.5mm; }
+  [dir="rtl"] th, [dir="rtl"] td { text-align: right; }
+  [dir="rtl"] .tip { border-left: 0; border-right: 1.2mm solid var(--gold); border-radius: 2mm 0 0 2mm; }
+  [dir="rtl"] .link, [dir="rtl"] .big span { direction: ltr; unicode-bidi: isolate; }
 </style>
 </head>
 <body>
-<div class="bar"><b>Guide</b><span style="opacity:.75">Weekly Academic Activity Attendance · one page for everyone</span><span style="flex:1"></span><button onclick="window.print()">Print / Save as PDF</button></div>
+<div class="bar"><b>Guide</b><span style="opacity:.75">Weekly Academic Activity Attendance · one page for everyone</span><span style="flex:1"></span><span data-lang-switch></span><button onclick="window.print()">Print / Save as PDF</button></div>
 
-<section class="page">
+<section class="page" data-lang="en">
   <div class="head">
     <img src="logo.svg" alt="Weekly Academic Activity" style="border-radius:5mm">
     <div>
@@ -115,6 +121,67 @@
   </ul>
 
   <div class="foot"><span>Patient Flow Management System, powered by Ruqelo</span><span>Weekly Academic Activity Attendance</span></div>
+</section>
+<section class="page" data-lang="ar">
+  <div class="head">
+    <img src="logo.svg" alt="النشاط الأكاديمي الأسبوعي" style="border-radius:5mm">
+    <div>
+      <div class="t1">وحدة طوارئ البالغين – قسم الطوارئ</div>
+      <div class="t2">النشاط الأكاديمي الأسبوعي<br>الحضور: كيف يعمل</div>
+      <div class="t3">رابط واحد في محادثة Zoom. يُسجَّل الحضور ويُرسل بالبريد الإلكتروني تلقائيًا.</div>
+    </div>
+  </div>
+
+  <div class="when">
+    <div><b>كل يوم اثنين</b>عبر Zoom</div>
+    <div><b>12:55 – 2:00 م</b>فترة التسجيل</div>
+    <div><b>نحو 2:30 م</b>إرسال التقرير بالبريد</div>
+  </div>
+
+  <div class="who">
+    <div class="card">
+      <span class="role">المنسّق</span>
+      <h3>خطوة واحدة</h3>
+      <p>عند 12:55، الصق هذا الرابط في <b>محادثة Zoom</b> وقل: <i>«يرجى تسجيل حضوركم الآن.»</i></p>
+      <div class="big"><span data-u="">academic.patientflowms.com</span></div>
+      <p>اختياري: انشره مرة أخرى نحو 1:45 للمنضمين متأخرًا. لا شيء غير ذلك.</p>
+    </div>
+    <div class="card">
+      <span class="role">الحاضرون</span>
+      <h3>15 ثانية</h3>
+      <ol>
+        <li>اضغط الرابط في محادثة Zoom (أو مجموعة WhatsApp).</li>
+        <li><b>سجّل الدخول عبر Google.</b></li>
+        <li>الاسم والرقم الوظيفي والمستوى (في المرة الأولى فقط).</li>
+        <li>اضغط <b>تسجيل الحضور</b>.</li>
+      </ol>
+      <p style="margin-top:1.5mm">يعمل من المنزل أو المستشفى. مرة واحدة لكل شخص، يوم الاثنين من 12:55 إلى 2:00 م فقط.</p>
+    </div>
+    <div class="card g">
+      <span class="role">رؤساء الأقسام والسكرتارية</span>
+      <h3>لا شيء مطلوب</h3>
+      <p><b>يصل تقرير الحضور (PDF) بالبريد الإلكتروني</b> نحو الساعة 2:30 م كل يوم اثنين، تلقائيًا، إلى جميع من في القائمة.</p>
+      <p style="margin-top:1.5mm">ويُرسل أيضًا ملخص شهري وآخر سنوي تلقائيًا.</p>
+    </div>
+  </div>
+
+  <h2><span class="n">1</span>الروابط</h2>
+  <table class="links">
+    <tr><td>رابط الحضور (محادثة Zoom / المجموعة)</td><td><span class="link" data-u="">academic.patientflowms.com</span></td></tr>
+    <tr><td>لوحة الإدارة (لرؤساء الأقسام)</td><td><span class="link" data-u="admin.html">academic.patientflowms.com/admin.html</span><br>سجّل الدخول بحساب Gmail الخاص بك: اطّلع على الحاضرين، وأضف الإدخالات أو صحّحها، وأعد إرسال التقرير.</td></tr>
+    <tr><td>الملصق الإلكتروني للمجموعة</td><td><span class="link" data-u="E-Poster.png">academic.patientflowms.com/E-Poster.png</span></td></tr>
+    <tr><td>سجل الحضور</td><td>ملف Google Sheet تمت مشاركته معك بالبريد الإلكتروني (Google Drive ← <b>مشترك معي</b>).</td></tr>
+  </table>
+
+  <h2><span class="n">2</span>أسئلة شائعة</h2>
+  <ul>
+    <li><b>شخص حضر ولم يتمكن من التسجيل؟</b> لوحة الإدارة ← <b>+ إدخال يدوي</b>. يظهر بعلامة «يدوي» في التقرير.</li>
+    <li><b>رسالة «لم يُفتح بعد» أو «التسجيل مغلق»؟</b> يعمل التسجيل يوم الاثنين فقط من 12:55 إلى 2:00 م.</li>
+    <li><b>خطأ في الاسم أو الرقم؟</b> لوحة الإدارة ← اضغط <b>✎</b> في ذلك الصف، وصحّحه، واكتب السبب. يُسجَّل كل تغيير.</li>
+    <li><b>إضافة مستلم للبريد أو إزالته، أو تغيير الوقت؟</b> تواصل مع مالك النظام (<span class="link" style="font-weight:600">swsaulat@gmail.com</span>).</li>
+  </ul>
+
+  <div class="foot"><span>نظام إدارة تدفق المرضى، مدعوم من Ruqelo</span><span>حضور النشاط الأكاديمي الأسبوعي</span></div>
 </section>
 <script src="config.js"></script>
 <script>

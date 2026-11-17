@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="i18n.js"></script>
 <style>
   :root { --teal: #1F9AA3; --teal-d: #0E5F68; --deep: #08363D; --gold: #BF9D68; --gold-l: #E9D3AC; --ink: #0F2A37; --ink2: #3B5563; --soft: #F3F8F9; --line: #DCE7EB; }
   * { box-sizing: border-box; }
@@ -41,6 +42,8 @@
   .fact span { display: block; font-size: 21px; color: var(--ink2); margin-top: 4px; }
   .foot { margin-top: auto; background: var(--soft); border-top: 6px solid var(--gold); padding: 22px 72px; display: flex; justify-content: space-between; align-items: center; }
   .foot .thanks { font-size: 30px; font-weight: 800; color: var(--teal-d); }
+  [dir="rtl"] .foot .cr { text-align: left; }
+  [dir="rtl"] .link { direction: ltr; }
   .foot .cr { font-size: 18px; color: #7B8F99; text-align: right; line-height: 1.4; }
 </style>
 </head>
